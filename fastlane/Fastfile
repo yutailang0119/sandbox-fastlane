@@ -16,8 +16,19 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  desc "Create Release to GitHub"
+  lane :create_github_release do |options|
+    api_token = options.fetch(:api_token)
+    tag_name = options.fetch(:tag_name)
+
+    github_release = set_github_release(
+      repository_name: "yutailang0119/sandbox-fastlane",
+      api_token: api_token,
+      name: tag_name,
+      tag_name: tag_name,
+      description: "Description by fastalane\n=====",
+      is_draft: true,
+      is_generate_release_notes: true
+    )
   end
 end

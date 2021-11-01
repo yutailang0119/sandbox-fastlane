@@ -16,11 +16,11 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios custom_lane
+### ios create_github_release
 ```
-fastlane ios custom_lane
+fastlane ios create_github_release
 ```
-Description of what the lane does
+Create Release to GitHub
 
 ----
 
